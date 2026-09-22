@@ -51,3 +51,7 @@ refine.mjs
 
 feed-check.json
 debug-touch.mjs
+
+update-post-view.mjs
+
+verify-original.mjs

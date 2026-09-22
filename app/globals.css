@@ -8,3 +8,14 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
 
 .card-body{touch-action:pan-y}
+/* Full text remains scrollable; horizontal gestures continue to swipe. */
+.card-body{justify-content:flex-start;padding-top:16px;padding-bottom:18px}
+.card-body>*{flex-shrink:0}
+.post-excerpt{display:block;overflow:visible;-webkit-line-clamp:unset;white-space:pre-wrap}
+.original-text{font-size:18px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;color:#efefef;margin:19px 0 12px;font-weight:400;letter-spacing:0}
+.post-limitation{font-size:13px;line-height:1.5;color:#999;margin:14px 0 5px}
+.post-limitation a{color:#edab85;text-decoration:underline}
+.read-original{border:1px solid #494949;background:#2b2b2b;text-align:left;border-radius:7px;padding:12px 14px;font-size:14px;margin:14px 0 4px;min-height:44px;align-self:flex-start}
+.original-embed{min-width:0}.original-embed iframe{max-width:100%!important}.embed-status{font-size:14px;line-height:1.6;color:#aaa}.original-embed .twitter-tweet{margin:0 auto!important}.detail-dialog{width:calc(100vw - 24px);max-width:550px!important;padding:22px!important}.detail-dialog [data-slot=dialog-title]{font-size:18px}.detail-dialog .original-embed{margin:0 -10px}
+@media(max-height:720px){.post-excerpt{-webkit-line-clamp:unset}.original-text{font-size:17px;line-height:1.55}.card-body{padding-top:8px}}
+@media(max-height:580px){.post-excerpt{-webkit-line-clamp:unset}}

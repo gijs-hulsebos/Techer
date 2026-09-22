@@ -25,3 +25,10 @@ Core checks: node --experimental-strip-types verify-core.mjs
 Type check: node node_modules/typescript/bin/tsc --noEmit
 
 The server-side ingestion interfaces and PostgreSQL schema remain available for future JEV/database integration; they are not connected to this RSS reader. The feature-detected WebMCP category tool is optional; native WebMCP was unavailable in the test browser.
+
+## Original X posts
+Cards now request the original public X oEmbed text, preserving line breaks and showing all text X returns without CSS truncation. Current and next posts are fetched on demand; responses are bounded and cached. Only IDs in the known Aligned News feed can be requested.
+
+Tap a card or choose “Bekijk X-post met media” for the official X widget, including media and quoted posts where available. Links to the original remain available when the widget fails. Reading a widget does not interfere with swipe gestures on the native feed card.
+
+Important: X's unauthenticated oEmbed/widget often truncates long-form posts. These are labelled as previews with a direct full-post link. This does not provide unrestricted access to full long-form X posts, threads or entire external articles. No missing text is synthesized. Authenticated X API access including note_tweet would be needed for guaranteed full long-form text where permitted.
