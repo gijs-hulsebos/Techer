@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {initialProfile,rank,affinity} from './lib/radar.ts';
+import {ingest,canonicalUrl} from './lib/ingestion.ts';
+const liked={...initialProfile,interactions:[{postId:'demo-1',action:'RIGHT',dwellTime:100,createdAt:new Date().toISOString()}]};
+assert.ok(affinity(liked,'AI')>affinity(initialProfile,'AI'));assert.ok(rank(liked,'ALL').every(p=>p.id!=='demo-1'));assert.ok(rank(initialProfile,'BLIND SPOT').every(p=>p.category!=='AI'&&p.category!=='DEV'));assert.equal(rank({...initialProfile,interests:[]},'BLIND SPOT').length,0);
+assert.equal(canonicalUrl('https://example.org/item/?utm_source=x#test'),'https://example.org/item');
+let calls=0;const stored=new Map();const p={externalId:'1',sourceId:'test',author:'Author',text:'Text',url:'https://example.org/item',publishedAt:'2026-09-22T00:00:00Z',media:[]};const adapters={RSS:{fetch:async()=>[p,{...p,url:p.url+'?utm_source=test'}]}};const ai={classify:async()=>{calls++;return {category:'AI',topics:['Agents'],entities:[],contentType:'NEWS',technicalDepth:.5,novelty:.7,signalScore:.9}},embed:async()=>[.2,.3,.4]};const repo={exists:async id=>stored.has(id),insertOnce:async p=>stored.set(p.id,p)};
+assert.deepEqual(await ingest({id:'test',kind:'RSS',locator:'unused'},adapters,ai,repo,3),{inserted:1,duplicates:1});assert.equal(calls,1);await ingest({id:'test',kind:'RSS',locator:'unused'},adapters,ai,repo,3);assert.equal(calls,1);
+await assert.rejects(()=>ingest({id:'test',kind:'RSS',locator:'unused'},adapters,{...ai,embed:async()=>[NaN]}, {exists:async()=>false,insertOnce:async()=>{}},3),/Invalid embedding/);
+console.log('PASS: learning, seen-post exclusion, Blind Spot relevance, cold start, URL normalization, batch/stored deduplication, classify-once, invalid embedding rejection');
