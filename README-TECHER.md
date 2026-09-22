@@ -32,3 +32,5 @@ Cards now request the original public X oEmbed text, preserving line breaks and 
 Tap a card or choose “Bekijk X-post met media” for the official X widget, including media and quoted posts where available. Links to the original remain available when the widget fails. Reading a widget does not interfere with swipe gestures on the native feed card.
 
 Important: X's unauthenticated oEmbed/widget often truncates long-form posts. These are labelled as previews with a direct full-post link. This does not provide unrestricted access to full long-form X posts, threads or entire external articles. No missing text is synthesized. Authenticated X API access including note_tweet would be needed for guaranteed full long-form text where permitted.
+
+Post cards use a native X-style author header, honest initials avatar, linked handles/URLs, compact text, a feed timestamp and functional view/save/open actions. No follower, like or repost metrics or verification badges are fabricated. Horizontal touch swiping remains on the native card.
