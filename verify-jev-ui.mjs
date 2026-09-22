@@ -1,0 +1,7 @@
+import {chromium} from 'playwright';import assert from 'node:assert/strict';
+const b=await chromium.launch({channel:'msedge',headless:true});const p=await b.newPage({viewport:{width:390,height:844}});
+await p.route('**/api/profile',r=>r.fulfill({json:{enabled:false}}));
+await p.route('**/api/ratings',r=>r.fulfill({json:{enabled:true,ratings:[{category:'AI',likes:4,dislikes:0,rated_posts:4,preference_score:75}]}}));
+let posts=0;const result={model:'typesafe/test',createdAt:new Date().toISOString(),swipesUsed:4,categories:[{category:'AI',score:81,confidence:.78}]};
+await p.route('**/api/analysis',r=>{if(r.request().method()==='POST')posts++;return r.fulfill({json:{enabled:true,analysis:{status:'ready',result}}})});
+await p.goto('http://127.0.0.1:3017');await p.getByText('Alleen op dit apparaat',{exact:true}).waitFor();await p.getByRole('tab',{name:'Analytics',exact:true}).click();await p.getByText('81/100',{exact:true}).waitFor({timeout:5000}).catch(async e=>{console.log(await p.locator('body').innerText());throw e});await p.getByRole('button',{name:'Opnieuw analyseren'}).click();await p.getByRole('button',{name:'Opnieuw analyseren'}).waitFor();assert.equal(posts,1);assert.ok(await p.getByText('Confidence 78%',{exact:true}).isVisible());await p.screenshot({path:'preview-jev-analytics.png',fullPage:true});console.log('PASS: saved analysis displayed, confidence, explicit analyze action. Mock provider; no extra paid calls.');await b.close();

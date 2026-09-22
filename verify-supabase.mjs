@@ -19,6 +19,8 @@ try{
  assert.equal(ratings.length,7);assert.equal(ratings.find(x=>x.category==='AI').likes,1);assert.equal(Number(ratings.find(x=>x.category==='AI').preference_score),60);
  assert.equal((await req('techer_swipes?user_id=eq.'+encodeURIComponent(b))).length,0);
  const blocked=await fetch(base+'techer_profiles',{headers:{apikey:anon}});assert.ok([401,403].includes(blocked.status));
+ assert.equal(await req('rpc/techer_reserve_analysis',{p_user_id:a,p_revision:1}),true);
+ assert.equal(await req('rpc/techer_reserve_analysis',{p_user_id:a,p_revision:1}),false);
  const race=await Promise.all([write(a,1,profile),write(a,1,profile)]);assert.deepEqual(race.sort((x,y)=>x-y),[-1,2]);
  assert.equal(await write(a,2,{...profile,interactions:[]}),3);
  assert.equal((await req('techer_category_ratings?user_id=eq.'+encodeURIComponent(a))).find(x=>x.category==='AI').likes,0);

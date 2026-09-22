@@ -27,3 +27,9 @@ Officiële documentatie:
 - https://supabase.com/docs/guides/database/postgres/row-level-security
 - https://docs.typesafe.ai/api
 - https://docs.typesafe.ai/primitives/score
+
+
+## Activering JEV via OpenRouter — 22 september 2026
+De actieve integratie gebruikt lib/jev-analysis.ts met typesafe/jev-1.13 via https://openrouter.ai/api/alpha/decisions. OPENROUTER_API_KEY is als servergeheim in Sites ingesteld. De oorspronkelijke directe TypeSafe-postscorefunctie is niet actief. Er is een echte analyse uitgevoerd op vier swipes en opgeslagen in techer_analyses. Analytics leest deze resultaten en biedt expliciet opnieuw analyseren aan. Er zijn geen automatische betaalde achtergrondaanroepen.
+
+Per analyse maximaal 50 recente likes/dislikes en maximaal 1000 tekens per posttitel en tekst. Geen user-ID, e-mail of bookmarks naar de modelprovider. Zeven voorkeursscores, met modelnaam, tijdstip, confidence en aantal swipes. Database-reservering begrenst op één aanvraag per 10 minuten en 12 per UTC-dag. Mislukte aanvragen tellen mee. De bestaande feedranking blijft gebaseerd op waargenomen swipes; JEV-resultaten zijn voorlopig analyse en worden nog niet als gevalideerd rankingmodel gebruikt.
