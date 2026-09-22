@@ -64,3 +64,4 @@ update-embed-feed.mjs
 
 verify-embed-feed.mjs
 !.env.example
+.dev.vars*

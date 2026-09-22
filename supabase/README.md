@@ -1,13 +1,13 @@
 # Techer database via de CLI
 
-CLI 2.117.0 is gecontroleerd en `supabase init` is uitgevoerd. De migratie is nog niet op een database toegepast. De CLI is nog niet ingelogd. Docker is aanwezig maar de Docker-engine draait niet.
+CLI 2.117.0 is gecontroleerd en `supabase init` is uitgevoerd. De CLI is ingelogd en gekoppeld aan Techer (akxsectksxkywgmrwhpo), organisatie gijs-hulsebos, eu-central-1. Beide migraties zijn toegepast en live getest.
 
 Voer vanuit de Techer-map uit:
 
 ```powershell
 npx --yes supabase@2.117.0 login
 npx --yes supabase@2.117.0 projects list
-npx --yes supabase@2.117.0 link --project-ref <project-ref>
+npx --yes supabase@2.117.0 link --project-ref akxsectksxkywgmrwhpo
 npx --yes supabase@2.117.0 migration list
 npx --yes supabase@2.117.0 db push --dry-run
 npx --yes supabase@2.117.0 db push
@@ -18,4 +18,4 @@ Log in via de eigen terminal; plaats tokens en databasewachtwoorden niet in chat
 
 De migratie maakt profielen, swipes, bookmarks en scores aan, met RLS, serverrechten en een atomaire profiel-write met revisiecontrole. De database is pas ingericht wanneer `db push` slaagt. Test daarna de functies, gebruikersisolatie en revisieconflicten op de echte database.
 
-Dit schakelt de live app nog niet over op cloudopslag. Zie ../INTEGRATIONS.md voor serverconfiguratie en de nog aan te sluiten synchronisatie.
+De app gebruikt de cloudopslag via een servergeheim in Sites. Zie ../INTEGRATIONS.md voor synchronisatie en de afzonderlijke JEV-activering.

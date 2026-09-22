@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {mergeProfile} from './lib/profile-merge.ts';
+const event=id=>({id,createdAt:'2026-09-22T00:00:00Z'});
+const base={interests:['AI'],interactions:[event('a')],saved:[{id:'s'}]};
+const local={interests:['AI','DEV'],interactions:[event('b')],saved:[]};
+const remote={interests:['AI','XR'],interactions:[event('a'),event('c')],saved:[{id:'s'},{id:'t'}]};
+const merged=mergeProfile(base,local,remote);
+assert.deepEqual(merged.interactions.map(e=>e.id).sort(),['b','c']);
+assert.deepEqual(merged.saved.map(e=>e.id),['t']);
+assert.deepEqual(merged.interests.sort(),['AI','DEV','XR']);
+assert.deepEqual(mergeProfile(base,local,merged),merged);
+console.log('PASS: concurrent additions retained, undo/removal retained, retries idempotent.');

@@ -1,11 +1,14 @@
 // Server-only module. Never import into a client component.
+import {env} from 'cloudflare:workers';
 import type {Profile} from './radar';
-export function storageConfigured(){return process.env.TECHER_CLOUD_ENABLED==='true'&&Boolean(process.env.SUPABASE_URL&&process.env.SUPABASE_SECRET_KEY)}
+function setting(key:string){return (env as Record<string,unknown>)[key] as string|undefined}
+export function storageConfigured(){return setting('TECHER_CLOUD_ENABLED')==='true'&&Boolean(setting('SUPABASE_URL')&&setting('SUPABASE_SECRET_KEY'))}
 export function siteUser(request:Request){const id=request.headers.get('oai-authenticated-user-id');if(!id||id.length>200)throw Error('AUTH_REQUIRED');return id}
 export async function supabaseRequest<T>(path:string,init:RequestInit={}):Promise<T>{
  if(!storageConfigured())throw Error('NOT_CONFIGURED');
- const origin=new URL(process.env.SUPABASE_URL!);if(origin.protocol!=='https:')throw Error('HTTPS_REQUIRED');
- const response=await fetch(new URL('/rest/v1/'+path,origin),{...init,headers:{apikey:process.env.SUPABASE_SECRET_KEY!,'Content-Type':'application/json',...init.headers},signal:AbortSignal.timeout(12000),redirect:'manual'});
+ const origin=new URL(setting('SUPABASE_URL')!);if(origin.protocol!=='https:')throw Error('HTTPS_REQUIRED');
+ const key=setting('SUPABASE_SECRET_KEY')!;
+ const response=await fetch(new URL('/rest/v1/'+path,origin),{...init,headers:{apikey:key,...(key.startsWith('eyJ')?{Authorization:`Bearer ${key}`} : {}),'Content-Type':'application/json',...init.headers},signal:AbortSignal.timeout(12000),redirect:'manual'});
  if(!response.ok)throw Error('DATABASE_UNAVAILABLE');
  if(response.status===204)return undefined as T;return await response.json() as T;
 }

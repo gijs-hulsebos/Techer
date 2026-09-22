@@ -5,13 +5,13 @@ Mobile-first tech feed sourced from Robert Scoble's published selection via Alig
 ## Current live behavior
 - Like and Dislike register RIGHT/LEFT events with UUID, timestamp, dwell time and a post snapshot.
 - A separate bookmark control adds/removes records in the reading list. Bookmarks do not affect preference ranking or JEV input.
-- Swipe on the grip below the embedded post (or the surrounding native card); the embedded X iframe handles its own video/link/scroll interactions. Like/dislike buttons and keyboard arrows always remain available.
+- Swipe on the surrounding native card; the embedded X iframe handles its own video/link/scroll interactions. Like/dislike buttons and keyboard arrows always remain available.
 - No extra Open original button in the normal reading flow. X retains its own links and controls; if the widget fails, a source-link fallback remains available.
-- Original feed source, category filters, Blind Spot, undo, browser persistence, and saved reading view are retained.
+- Original feed source, category filters, Blind Spot, undo, Supabase persistence, and saved reading view are retained.
 - X may truncate long posts. The embed is controlled by X and cannot guarantee unrestricted long-form content.
 
 ## Persistence and scoring
-Supabase and JEV are prepared but NOT connected. The UI still uses browser-local state. See INTEGRATIONS.md for the exact activation steps, schema, server-only environment variables, privacy boundaries and remaining integration work. No database was provisioned, no migration applied, and no live JEV calls made.
+Supabase project Techer (akxsectksxkywgmrwhpo) is provisioned and migrated. The UI synchronizes each authenticated user’s profile, swipes and bookmarks through the server. Category ratings are derived in the database; bookmarks are separate. Browser storage holds a temporary outbox for offline changes. See INTEGRATIONS.md. JEV remains disabled: no key configured or live calls made.
 
 ## Development and checks
 npm install
