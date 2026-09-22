@@ -1,26 +1,27 @@
 # Techer
 
-Working demo of a personal technology radar. Built with React, TypeScript, Tailwind and the Next.js-compatible Vinext runtime used by Sites. Swipe animations use CSS and pointer events; no Framer Motion dependency is required.
+Mobile-first swipe reader for Robert Scoble's selection, via the public Aligned News RSS feed: https://alignednews.com/feed.xml.
 
-## Included
-- 14 explicitly labelled editorial demo notes, all loaded in memory.
-- Mouse/touch swipes, left/right arrow keys, undo, save, saved library, category filters, interest selection, reading dialog and external related-reading links.
-- Device-local persistence of interests, interactions and saved IDs. OPEN has weak positive weight, SAVE strong positive weight. Undo restores the state before the last swipe.
-- Deterministic ranking using declared category interests and behavior. Blind Spot requires a meaningful bridge to a positive interest and a relatively unexplored category; it never simply selects random rejected posts.
-- Strict normalized-post and classification schemas, generic adapter contracts, an HN adapter, URL deduplication, classification-on-ingestion and embedding validation.
-- PostgreSQL/pgvector migration scaffold with RLS enabled. This does not provision a database.
+## Current behavior
+- A single card fills the available screen, with touch swipes as the primary action. Supports pointer dragging, velocity/distance thresholds, swipe feedback, undo and keyboard arrows.
+- Black/gray/white interface with a restrained orange accent. No green theme, promotional panels, generated diagrams, sample articles or generated summaries.
+- GET /api/feed fetches the actual Aligned News RSS server-side. Source response is normalized, URL-deduplicated, and cached for five minutes. The client retains the last successful feed for temporary outages, labelled as earlier content.
+- Original titles and short feed descriptions. Repeated titles and two known generic boilerplate sentences are removed. The original link opens X or the source website. No original tweet body is fabricated.
+- X-linked records get a small ranking preference. Category interests, positive/negative swipes, saves and opens affect ordering. Categories are based on the publisher's sections, with simple keyword bridges for Blind Spot; this is not JEV classification.
+- Preferences and saved post snapshots are device-local. Saved records survive feed refreshes. Undo removes only the last swipe event and preserves later saves.
+- Fits tested mobile viewports from 320×568 to 430×932 and desktop, with actions inside the viewport and safe-area support.
 
-## Run
-Install with npm install, then npm run dev. npm run build produces the Sites Worker build.
+## Source limitations
+Aligned News says it draws from 63 Robert Scoble X lists and additional sources. This app reads their publicly syndicated selection; it does not have the underlying 63 list IDs or direct access to every tweet. Direct X ingestion still needs the exact list IDs and authorized X API access. This distinction is visible in the source dialog.
 
-## Connect live services
-The current UI intentionally uses lib/radar.ts fixtures and localStorage. It does not claim live X news, JEV classification or real semantic embeddings.
+## Development
+npm install
+npm run dev
+npm run build
 
-1. Provision PostgreSQL with pgvector. Select an embedding model and adjust both vector dimensions in db/schema.sql before applying it. Connect through a server-only HTTP-compatible database client for Workers. Never put credentials in NEXT_PUBLIC variables.
-2. Implement PostRepository with a transactional upsert on the canonical URL hash. Use a dedicated ingestion role and authenticated per-user API endpoints; RLS currently denies ordinary client access by default.
-3. Bind a verified JEV/Typesafe AI client to jevProvider(classify, embed). Classify output must match classificationSchema. No undocumented endpoint has been assumed.
-4. Bind X list/account, RSS and website clients through sourceAdapter; supply only administrator-configured source locators. The exported hackerNewsAdapter can be used directly. For Scoble lists, obtain the actual list IDs and authorized X API access.
-5. Run ingest in a single scheduled server-side worker (or acquire a per-source database lock). It deduplicates before calling AI. The repository must also enforce insertOnce atomically for concurrency.
-6. Add authenticated feed/interaction/profile endpoints, switch the UI from fixtures to those endpoints, and compute embedding similarity and topic/entity/content-type affinities on the server. The current /api/feed endpoint identifies itself as demo.
+On Windows when the npm wrapper misresolves paths, call node scripts/run-framework.mjs dev or build directly.
 
-API keys, authentication, a live ingestion scheduler, deployed database and JEV account are not included. The demo’s sample links are related reading, not original sources. The WebMCP category tool is feature-detected; unsupported browsers skip it.
+Core checks: node --experimental-strip-types verify-core.mjs
+Type check: node node_modules/typescript/bin/tsc --noEmit
+
+The server-side ingestion interfaces and PostgreSQL schema remain available for future JEV/database integration; they are not connected to this RSS reader. The feature-detected WebMCP category tool is optional; native WebMCP was unavailable in the test browser.

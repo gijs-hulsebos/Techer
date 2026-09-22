@@ -48,3 +48,6 @@ next-env.d.ts
 preview-*.png
 verify-ui.mjs
 refine.mjs
+
+feed-check.json
+debug-touch.mjs

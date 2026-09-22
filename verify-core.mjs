@@ -1,10 +1,8 @@
 import assert from 'node:assert/strict';
-import {initialProfile,rank,affinity} from './lib/radar.ts';
-import {ingest,canonicalUrl} from './lib/ingestion.ts';
-const liked={...initialProfile,interactions:[{postId:'demo-1',action:'RIGHT',dwellTime:100,createdAt:new Date().toISOString()}]};
-assert.ok(affinity(liked,'AI')>affinity(initialProfile,'AI'));assert.ok(rank(liked,'ALL').every(p=>p.id!=='demo-1'));assert.ok(rank(initialProfile,'BLIND SPOT').every(p=>p.category!=='AI'&&p.category!=='DEV'));assert.equal(rank({...initialProfile,interests:[]},'BLIND SPOT').length,0);
-assert.equal(canonicalUrl('https://example.org/item/?utm_source=x#test'),'https://example.org/item');
-let calls=0;const stored=new Map();const p={externalId:'1',sourceId:'test',author:'Author',text:'Text',url:'https://example.org/item',publishedAt:'2026-09-22T00:00:00Z',media:[]};const adapters={RSS:{fetch:async()=>[p,{...p,url:p.url+'?utm_source=test'}]}};const ai={classify:async()=>{calls++;return {category:'AI',topics:['Agents'],entities:[],contentType:'NEWS',technicalDepth:.5,novelty:.7,signalScore:.9}},embed:async()=>[.2,.3,.4]};const repo={exists:async id=>stored.has(id),insertOnce:async p=>stored.set(p.id,p)};
-assert.deepEqual(await ingest({id:'test',kind:'RSS',locator:'unused'},adapters,ai,repo,3),{inserted:1,duplicates:1});assert.equal(calls,1);await ingest({id:'test',kind:'RSS',locator:'unused'},adapters,ai,repo,3);assert.equal(calls,1);
-await assert.rejects(()=>ingest({id:'test',kind:'RSS',locator:'unused'},adapters,{...ai,embed:async()=>[NaN]}, {exists:async()=>false,insertOnce:async()=>{}},3),/Invalid embedding/);
-console.log('PASS: learning, seen-post exclusion, Blind Spot relevance, cold start, URL normalization, batch/stored deduplication, classify-once, invalid embedding rejection');
+import {initialProfile,rank,affinity,isPost} from './lib/radar.ts';
+import {parseAligned} from './lib/aligned.ts';
+const rss=`<rss><channel><item><title>AI inference needs memory</title><link>https://x.com/a/status/1</link><description>AI inference needs memory. The source presents a concrete development or result worth tracking, with verification centered on the linked primary record and its follow up evidence.</description><category>chips</category><pubDate>Mon, 21 Sep 2026 16:57:22 GMT</pubDate></item><item><title>Duplicate</title><link>https://x.com/a/status/1?utm_source=rss</link><pubDate>Mon, 21 Sep 2026 16:57:22 GMT</pubDate></item><item><title>Unsafe</title><link>javascript:alert(1)</link><pubDate>Mon, 21 Sep 2026 16:57:22 GMT</pubDate></item></channel></rss>`;
+const posts=parseAligned(rss);assert.equal(posts.length,1);assert.equal(posts[0].text,'');assert.equal(posts[0].author,'@a');assert.equal(posts[0].category,'HARDWARE');assert.deepEqual(posts[0].related,['AI']);assert.ok(isPost(posts[0]));assert.throws(()=>parseAligned('<!DOCTYPE rss><rss/>'),/Unsupported/);
+assert.equal(rank(posts,initialProfile,'BLIND SPOT').length,1);assert.equal(rank(posts,{...initialProfile,interests:[]},'BLIND SPOT').length,0);assert.equal(rank(posts,initialProfile,'AI').length,0);
+const liked={...initialProfile,interactions:[{id:'a',postId:posts[0].id,category:'HARDWARE',action:'RIGHT',dwellTime:200,createdAt:new Date().toISOString()}]};assert.ok(affinity(liked,'HARDWARE')>affinity(initialProfile,'HARDWARE'));assert.equal(rank(posts,liked,'ALL').length,0);
+console.log('PASS: RSS parsing, canonical deduplication, unsafe URL and DTD rejection, boilerplate removal, source identity, category/interest ranking, seen exclusion and Blind Spot relevance.');
