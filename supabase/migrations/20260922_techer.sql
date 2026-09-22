@@ -48,8 +48,11 @@ create or replace function public.techer_save_profile(p_user_id text,p_expected_
 returns bigint language plpgsql security invoker set search_path = '' as $$
 declare current_revision bigint;
 begin
- if length(p_user_id) < 1 or jsonb_typeof(p_state->'interactions') <> 'array'
- or jsonb_typeof(p_state->'saved') <> 'array' or jsonb_typeof(p_state->'interests') <> 'array' then
+ if p_user_id is null or length(p_user_id) < 1
+ or p_expected_revision is null or p_expected_revision < 0
+ or jsonb_typeof(p_state->'interactions') is distinct from 'array'
+ or jsonb_typeof(p_state->'saved') is distinct from 'array'
+ or jsonb_typeof(p_state->'interests') is distinct from 'array' then
   raise exception 'Invalid profile';
  end if;
  insert into public.techer_profiles(user_id) values(p_user_id) on conflict do nothing;
