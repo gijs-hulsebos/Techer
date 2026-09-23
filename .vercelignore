@@ -1,0 +1,14 @@
+.git
+.openai
+.sites-runtime
+.wrangler
+.dev.vars*
+.env*
+supabase
+dist
+node_modules
+preview-*
+verify-*
+debug-*
+update-*
+*.tar.gz

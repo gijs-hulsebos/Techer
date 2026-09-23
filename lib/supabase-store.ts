@@ -1,9 +1,9 @@
 // Server-only module. Never import into a client component.
-import {env} from 'cloudflare:workers';
+import {authenticatedUser} from './auth-server';
 import type {Profile} from './radar';
-function setting(key:string){return (env as Record<string,unknown>)[key] as string|undefined}
+function setting(key:string){return process.env[key]}
 export function storageConfigured(){return setting('TECHER_CLOUD_ENABLED')==='true'&&Boolean(setting('SUPABASE_URL')&&setting('SUPABASE_SECRET_KEY'))}
-export function siteUser(request:Request){const id=request.headers.get('oai-authenticated-user-id');if(!id||id.length>200)throw Error('AUTH_REQUIRED');return id}
+export async function siteUser(_request:Request){const user=await authenticatedUser();if(!user)throw Error('AUTH_REQUIRED');return user.id}
 export async function supabaseRequest<T>(path:string,init:RequestInit={}):Promise<T>{
  if(!storageConfigured())throw Error('NOT_CONFIGURED');
  const origin=new URL(setting('SUPABASE_URL')!);if(origin.protocol!=='https:')throw Error('HTTPS_REQUIRED');
