@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {train,examples,modelValid,predict,personalizedOrder} from './lib/personal-model.ts';
+const now=Date.parse('2026-09-23T12:00:00Z');
+const post=(i)=>({id:'p'+i,title:i%2?'robot circuit':'market business',text:'',tags:[],category:i%2?'ROBOTICS':'STARTUPS',author:'',handle:'',url:'https://example.com/'+i,source:'test',sourceCategory:'test',related:[],publishedAt:new Date(now-86400000).toISOString()});
+const event=i=>({id:'event'+i,postId:'p'+i,post:post(i),category:post(i).category,action:i%2?'RIGHT':'LEFT',dwellTime:1000,createdAt:new Date(now-(300-i)*3600000).toISOString()});
+const profile={interests:[],saved:[],interactions:Array.from({length:160},(_,i)=>event(i))};
+assert.equal(train({...profile,interactions:profile.interactions.slice(0,50)},null,null,now).state.status,'collecting');
+const result=train(profile,null,null,now);assert.equal(result.state.status,'active');assert(result.active);assert(result.state.metrics.candidate<result.state.metrics.baseline);assert(predict(result.active,post(201))>predict(result.active,post(202)));
+assert.equal(train(profile,result.active,result.state,now).state.status,'waiting');
+assert.equal(modelValid(result.active,examples({...profile,interactions:profile.interactions.slice(1)},now)),false);
+const changed={...profile,interactions:profile.interactions.map((e,i)=>i?e:{...e,action:'RIGHT'})};assert.equal(modelValid(result.active,examples(changed,now)),false);
+const extra={...profile,interactions:[...profile.interactions,...Array.from({length:30},(_,i)=>event(160+i))]};const second=train(extra,result.active,result.state,now);assert(second.state.metrics);assert(Date.parse(second.state.metrics.testStart)>Date.parse(result.active.trainedThrough));
+const duplicate={...profile,interactions:[...profile.interactions,{...event(0),id:'duplicate'}]};assert.equal(examples(duplicate,now).length,160);
+assert.equal(examples({...profile,interactions:[{...event(0),action:'SAVE'},{...event(1),createdAt:new Date(now+1).toISOString()}]},now).length,0);
+const pool=Array.from({length:50},(_,i)=>post(i+500));const ranked=personalizedOrder(pool,result.active,'fixed');assert.equal(new Set(ranked.map(p=>p.id)).size,50);assert.deepEqual(ranked,personalizedOrder(pool,result.active,'fixed'));assert.equal(profile.interactions.length,160);
+assert.equal(train({...profile,interactions:profile.interactions.map(e=>({...e,action:'RIGHT'}))},null,null,now).active,null);
+console.log('PASS: cold start, learned signal, temporal holdout, new-label gate, undo/edit invalidation, deduplication, bookmarks/future exclusion, deterministic exploration, one-class protection.');

@@ -7,6 +7,8 @@ import {categories,initialProfile,rank,affinity,isPost,type Profile,type Post,ty
 import {PostText,OriginalEmbed,preloadPost} from '@/components/original-post';
 import {xPostId} from '@/lib/x-post';
 import {useCloudProfile} from '@/lib/use-cloud-profile';
+import {usePersonalModel} from '@/lib/use-personal-model';
+import {examples,modelValid,personalizedOrder} from '@/lib/personal-model';
 import {Analytics} from '@/components/analytics';
 const STORE='techer-v2',CACHE='techer-feed-v2';
 const labels:Record<string,string>={ALL:'Alles',AI:'AI',ROBOTICS:'Robotics',XR:'XR',DEV:'Dev',HARDWARE:'Hardware',STARTUPS:'Startups',SCIENCE:'Science','BLIND SPOT':'Blind Spot'};
@@ -20,7 +22,10 @@ export default function RadarApp(){
  useEffect(()=>{try{const cached=JSON.parse(localStorage.getItem(CACHE)||'null');if(cached&&Array.isArray(cached.posts)&&cached.posts.every(isPost)){setPosts(cached.posts);setFetchedAt(cached.fetchedAt);setStale(true)}}catch{setStorageError(true)}void loadFeed();return()=>{if(timer.current)clearTimeout(timer.current)}},[loadFeed]);
  useEffect(()=>{const refresh=()=>{if(document.visibilityState==='visible'&&!busy.current&&!pointer.current)void loadFeed()};const interval=setInterval(refresh,5*60*1000);window.addEventListener('focus',refresh);window.addEventListener('online',refresh);document.addEventListener('visibilitychange',refresh);return()=>{clearInterval(interval);window.removeEventListener('focus',refresh);window.removeEventListener('online',refresh);document.removeEventListener('visibilitychange',refresh)}},[loadFeed]);
  useEffect(()=>{if(!notice)return;const t=setTimeout(()=>setNotice(''),1800);return()=>clearTimeout(t)},[notice]);
- const feed=rank(posts,profile,filter),current=feed[0];
+ const personal=usePersonalModel();
+ const basicFeed=rank(posts,profile,filter);
+ const learned=personal?.active&&modelValid(personal.active,examples(profile))?personal.active:null;
+ const feed=learned&&filter!=='BLIND SPOT'?personalizedOrder(basicFeed,learned,new Date().toISOString().slice(0,10)+learned.trainedAt,profile.interactions.filter(e=>e.action==='LEFT'||e.action==='RIGHT').length):basicFeed,current=feed[0];
  useEffect(()=>{if(feed[1])void preloadPost(feed[1].url)},[feed[1]?.id]);
  useEffect(()=>{entered.current=Date.now();setDrag(0)},[current?.id]);
  function record(post:Post,action:Action){const id=crypto.randomUUID();setProfile(p=>({...p,interactions:[...p.interactions,{id,postId:post.id,category:post.category,post,action,dwellTime:Math.max(0,Date.now()-entered.current),createdAt:new Date().toISOString()}]}));return id}

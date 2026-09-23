@@ -1,1 +1,19 @@
-{"framework":"nextjs","buildCommand":"npm run build","installCommand":"npm ci","functions":{"app/api/analysis/route.ts":{"maxDuration":60}}}
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "functions": {
+    "app/api/analysis/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/cron/train/route.ts": {
+      "maxDuration": 300
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/train",
+      "schedule": "0 3 * * *"
+    }
+  ]
+}
