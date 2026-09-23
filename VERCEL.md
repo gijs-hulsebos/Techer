@@ -3,7 +3,7 @@
 Production: https://techer-three.vercel.app
 The production build and TypeScript checks passed. Anonymous profile and ratings requests return 401, including requests with forged legacy identity headers. `TECHER_SITE_URL` is configured for production.
 
-Hosting uses Vercel with Next.js. Deploy with `npx vercel deploy --prod` from this directory. The old `.openai` configuration is retained only as migration history; do not publish through Sites.
+Hosting uses Vercel with Next.js. The existing Vercel project `techer` is connected to `gijs-hulsebos/Techer` on GitHub. Pushes to `main` trigger production deployments; use pull requests for previews. `npx vercel deploy --prod` is available for manual deployments. The old `.openai` configuration is retained only as migration history; do not publish through Sites.
 
 Production environment variables:
 
@@ -20,3 +20,4 @@ The server validates Supabase sessions with `auth.getUser()`. Client-supplied id
 Google login is configured. Google Cloud Audience must allow the intended users; while the Google application remains in testing, access is limited by Google's audience settings. A real Google consent flow still requires the account holder to sign in. Existing-profile migration remains pending. The old deployment can remain available during this transition.
 
 `proxy.ts` renews sessions and returns refreshed cookies before rendering the app or serving private APIs. Private responses must not be cached.
+
