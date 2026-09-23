@@ -38,3 +38,5 @@ html,body{background:#000;color:#e7e9ea}.app{background:#000}.wordmark span{colo
 .jev-results{margin:16px 0}.jev-results>div{display:grid;grid-template-columns:1fr auto;gap:5px;padding:10px 0;border-bottom:1px solid #35303e}.jev-results>div>strong{float:none;color:#ebafd5;font-size:14px}.jev-results small{grid-column:1/-1;color:#9e95a7;font-size:11px}.jev-status .primary{margin-top:16px;width:100%}
 
 .login-page{max-width:470px;margin:auto;padding:80px 28px;min-height:100dvh;background:radial-gradient(ellipse at top,#24182e,transparent 70%)}.login-page h1{font-size:42px;line-height:1.1;letter-spacing:-1.6px;margin:70px 0 22px}.login-page p{color:#a79aac;font-size:17px;line-height:1.65;margin-bottom:32px}.login-page .primary{background:linear-gradient(135deg,#f25387,#b957da);color:white;border-radius:16px}.login-pending{padding:20px;border:1px solid #49324b;border-radius:16px;color:#d3c5d9;line-height:1.7}.login-pending small{color:#9e91a6}
+
+.feed-tools{justify-content:flex-end}
