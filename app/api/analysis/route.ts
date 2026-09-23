@@ -3,7 +3,7 @@ import {analyzeWithJev} from '@/lib/jev-analysis';
 import {readProfile,siteUser,storageConfigured,supabaseRequest} from '@/lib/supabase-store';
 const headers={'Cache-Control':'no-store'};
 function configured(){const e=process.env;return e.TECHER_JEV_ENABLED==='true'&&typeof e.OPENROUTER_API_KEY==='string'}
-export async function GET(request:Request){try{const user=await siteUser(request);if(!storageConfigured())return Response.json({enabled:false},{headers});const q=new URLSearchParams({user_id:'eq.'+user,select:'status,result,profile_revision,completed_at',limit:'1'});const rows=await supabaseRequest<unknown[]>('techer_analyses?'+q);return Response.json({enabled:configured(),analysis:rows[0]??null},{headers})}catch{return Response.json({error:'Analyse niet beschikbaar.'},{status:503,headers})}}
+export async function GET(request:Request){try{const user=await siteUser(request);if(!storageConfigured())return Response.json({enabled:false},{headers});const q=new URLSearchParams({user_id:'eq.'+user,select:'status,result,profile_revision,completed_at',limit:'1'});const rows=await supabaseRequest<unknown[]>('techer_analyses?'+q);const history=await supabaseRequest<{result:unknown}[]>('techer_analysis_history?'+new URLSearchParams({user_id:'eq.'+user,select:'result',order:'completed_at.desc',limit:'90'}));return Response.json({enabled:configured(),analysis:rows[0]??null,history:history.map(r=>r.result)},{headers})}catch{return Response.json({error:'Analyse niet beschikbaar.'},{status:503,headers})}}
 export async function POST(request:Request){
  if(request.headers.get('origin')!==new URL(request.url).origin)return Response.json({error:'Ongeldige herkomst.'},{status:403,headers});
  let user='';let reserved=false;
