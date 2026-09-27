@@ -1,0 +1,1022 @@
+{
+  "Alles": [
+    "All",
+    "Tout",
+    "Alle"
+  ],
+  "Leeslijst": [
+    "Reading list",
+    "À lire",
+    "Leseliste"
+  ],
+  "Ontdek": [
+    "Discover",
+    "Découvrir",
+    "Entdecken"
+  ],
+  "Interesses instellen": [
+    "Settings",
+    "Paramètres",
+    "Einstellungen"
+  ],
+  "Hoofdnavigatie": [
+    "Main navigation",
+    "Navigation principale",
+    "Hauptnavigation"
+  ],
+  "Interesses": [
+    "Settings",
+    "Paramètres",
+    "Einstellungen"
+  ],
+  "Opslaan": [
+    "Save",
+    "Enregistrer",
+    "Speichern"
+  ],
+  "Uitloggen": [
+    "Log out",
+    "Se déconnecter",
+    "Abmelden"
+  ],
+  "Taal": [
+    "Language",
+    "Langue",
+    "Sprache"
+  ],
+  "Interfacetaal. Nieuws blijft in de oorspronkelijke taal.": [
+    "Interface language. News stays in its original language.",
+    "Langue de l’interface. Les articles restent dans leur langue d’origine.",
+    "Sprache der Oberfläche. Nachrichten bleiben in ihrer Originalsprache."
+  ],
+  "Kies onderwerpen. Je swipes passen de selectie verder aan.": [
+    "Choose your language and interests. Your swipes refine your feed.",
+    "Choisissez votre langue et vos centres d’intérêt. Vos swipes affinent le fil.",
+    "Wähle Sprache und Interessen. Deine Swipes verbessern deinen Feed."
+  ],
+  "Categorie": [
+    "Category",
+    "Catégorie",
+    "Kategorie"
+  ],
+  "Bewaren": [
+    "Save",
+    "Enregistrer",
+    "Speichern"
+  ],
+  "Bewaard": [
+    "Saved",
+    "Enregistré",
+    "Gespeichert"
+  ],
+  "Bewaar huidige post": [
+    "Save this post",
+    "Enregistrer cette publication",
+    "Diesen Beitrag speichern"
+  ],
+  "Bewaar in leeslijst": [
+    "Save to reading list",
+    "Ajouter à la liste de lecture",
+    "Zur Leseliste hinzufügen"
+  ],
+  "Verwijder uit leeslijst": [
+    "Remove from reading list",
+    "Retirer de la liste de lecture",
+    "Aus Leseliste entfernen"
+  ],
+  "Uit leeslijst verwijderd": [
+    "Removed from reading list",
+    "Retiré de la liste de lecture",
+    "Aus Leseliste entfernt"
+  ],
+  "Toegevoegd aan leeslijst": [
+    "Added to reading list",
+    "Ajouté à la liste de lecture",
+    "Zur Leseliste hinzugefügt"
+  ],
+  "Vorige swipe herstellen": [
+    "Undo last swipe",
+    "Annuler le dernier swipe",
+    "Letzten Swipe rückgängig machen"
+  ],
+  "Swipe teruggedraaid": [
+    "Swipe undone",
+    "Swipe annulé",
+    "Swipe rückgängig gemacht"
+  ],
+  "Bron tijdelijk niet bereikbaar.": [
+    "Source temporarily unavailable.",
+    "Source temporairement indisponible.",
+    "Quelle vorübergehend nicht erreichbar."
+  ],
+  "Opslaan in deze browser is niet beschikbaar.": [
+    "Saving in this browser is unavailable.",
+    "L’enregistrement est indisponible dans ce navigateur.",
+    "Speichern in diesem Browser ist nicht verfügbar."
+  ],
+  "Eerder opgehaald · ": [
+    "Previously fetched · ",
+    "Récupéré précédemment · ",
+    "Zuvor geladen · "
+  ],
+  "Swipe door berichten": [
+    "Swipe through posts",
+    "Parcourir les publications",
+    "Durch Beiträge swipen"
+  ],
+  "Berichten ophalen": [
+    "Fetching posts",
+    "Chargement des publications",
+    "Beiträge werden geladen"
+  ],
+  "De bron reageert niet.": [
+    "The source is not responding.",
+    "La source ne répond pas.",
+    "Die Quelle antwortet nicht."
+  ],
+  "Probeer het straks opnieuw.": [
+    "Please try again later.",
+    "Réessayez plus tard.",
+    "Bitte später erneut versuchen."
+  ],
+  "Opnieuw proberen": [
+    "Try again",
+    "Réessayer",
+    "Erneut versuchen"
+  ],
+  "Nog geen passende berichten.": [
+    "No matching posts yet.",
+    "Aucune publication correspondante.",
+    "Noch keine passenden Beiträge."
+  ],
+  "Alles gezien.": [
+    "You’re all caught up.",
+    "Vous avez tout vu.",
+    "Du bist auf dem neuesten Stand."
+  ],
+  "Swipe in de gewone feed om je interesses aan te geven.": [
+    "Swipe in the main feed to share your interests.",
+    "Swipez dans le fil principal pour préciser vos intérêts.",
+    "Swipe im Hauptfeed, um deine Interessen zu zeigen."
+  ],
+  "Je hebt alle opgehaalde berichten bekeken.": [
+    "You’ve seen all available posts.",
+    "Vous avez vu toutes les publications disponibles.",
+    "Du hast alle verfügbaren Beiträge gesehen."
+  ],
+  "Geen ongelezen berichten in deze categorie.": [
+    "No unread posts in this category.",
+    "Aucune publication non lue dans cette catégorie.",
+    "Keine ungelesenen Beiträge in dieser Kategorie."
+  ],
+  "Vernieuwen": [
+    "Refresh",
+    "Actualiser",
+    "Aktualisieren"
+  ],
+  "Alle berichten": [
+    "All posts",
+    "Toutes les publications",
+    "Alle Beiträge"
+  ],
+  "over": [
+    "remaining",
+    "restants",
+    "übrig"
+  ],
+  "Terug naar feed": [
+    "Back to feed",
+    "Retour au fil",
+    "Zurück zum Feed"
+  ],
+  "Terug naar de feed": [
+    "Back to feed",
+    "Retour au fil",
+    "Zurück zum Feed"
+  ],
+  "Nog niets bewaard.": [
+    "Nothing saved yet.",
+    "Rien d’enregistré pour le moment.",
+    "Noch nichts gespeichert."
+  ],
+  "Verwijder ": [
+    "Remove ",
+    "Retirer ",
+    "Entfernen: "
+  ],
+  "Bron": [
+    "Source",
+    "Source",
+    "Quelle"
+  ],
+  "De feed bevat een fragment. Open de bronwebsite voor de volledige publicatie.": [
+    "This is an excerpt. Visit the source for the full publication.",
+    "Ceci est un extrait. Consultez la source pour lire la publication complète.",
+    "Dies ist ein Auszug. Den vollständigen Beitrag findest du auf der Quellwebsite."
+  ],
+  "JOUW VOORKEUREN": [
+    "YOUR PREFERENCES",
+    "VOS PRÉFÉRENCES",
+    "DEINE VORLIEBEN"
+  ],
+  "Analytics vernieuwen": [
+    "Refresh analytics",
+    "Actualiser les statistiques",
+    "Statistiken aktualisieren"
+  ],
+  "Je ratings laden…": [
+    "Loading your ratings…",
+    "Chargement de vos évaluations…",
+    "Deine Bewertungen werden geladen…"
+  ],
+  "Je ratings konden niet worden geladen.": [
+    "Your ratings could not be loaded.",
+    "Impossible de charger vos évaluations.",
+    "Deine Bewertungen konnten nicht geladen werden."
+  ],
+  "Analytics is beschikbaar zodra de database is verbonden.": [
+    "Analytics becomes available when the database is connected.",
+    "Les statistiques seront disponibles une fois la base connectée.",
+    "Statistiken sind verfügbar, sobald die Datenbank verbunden ist."
+  ],
+  "Per categorie": [
+    "By category",
+    "Par catégorie",
+    "Nach Kategorie"
+  ],
+  "Je eerste swipe is het begin. Hier zie je welke onderwerpen je aanspreken.": [
+    "Start swiping to discover which topics interest you.",
+    "Commencez à swiper pour découvrir vos sujets préférés.",
+    "Swipe los und entdecke, welche Themen dich interessieren."
+  ],
+  "Nog geen swipes": [
+    "No swipes yet",
+    "Aucun swipe",
+    "Noch keine Swipes"
+  ],
+  "Voorkeur weegt dislike, like en superlike als 0, 1 en 2, met een neutrale startscore van 50. Met meer swipes krijgt je eigen gedrag meer gewicht. Bewaren telt niet als like.": [
+    "Preference weights dislike, like and superlike as 0, 1 and 2, starting at a neutral 50. More swipes give your choices more weight. Saving is separate from liking.",
+    "La préférence pondère dislike, like et superlike par 0, 1 et 2, avec un départ neutre à 50. Plus vous swipez, plus vos choix comptent. Enregistrer ne compte pas comme un like.",
+    "Die Präferenz gewichtet Dislike, Like und Superlike mit 0, 1 und 2, ausgehend von neutralen 50. Mehr Swipes geben deinen Entscheidungen mehr Gewicht. Speichern zählt nicht als Like."
+  ],
+  "JEV-analyse": [
+    "JEV analysis",
+    "Analyse JEV",
+    "JEV-Analyse"
+  ],
+  "Verbonden": [
+    "Connected",
+    "Connecté",
+    "Verbunden"
+  ],
+  "Niet actief": [
+    "Inactive",
+    "Inactif",
+    "Inaktiv"
+  ],
+  "Laat JEV je voorkeuren uit je likes en dislikes analyseren.": [
+    "Let JEV analyse your preferences from your ratings.",
+    "Laissez JEV analyser vos préférences à partir de vos évaluations.",
+    "Lass JEV deine Vorlieben anhand deiner Bewertungen analysieren."
+  ],
+  "Analyseren…": [
+    "Analysing…",
+    "Analyse en cours…",
+    "Analyse läuft…"
+  ],
+  "Opnieuw analyseren": [
+    "Analyse again",
+    "Analyser à nouveau",
+    "Erneut analysieren"
+  ],
+  "Analyseer met JEV": [
+    "Analyse with JEV",
+    "Analyser avec JEV",
+    "Mit JEV analysieren"
+  ],
+  "JEV-status niet beschikbaar.": [
+    "JEV status unavailable.",
+    "Statut JEV indisponible.",
+    "JEV-Status nicht verfügbar."
+  ],
+  "Analyse mislukt.": [
+    "Analysis failed.",
+    "Échec de l’analyse.",
+    "Analyse fehlgeschlagen."
+  ],
+  "JEV schat voorkeuren; de scores zijn geen zekerheid. Een hoge confidence bij 50 kan betekenen dat er onvoldoende bewijs is. Maximaal één analyse per 10 minuten en 12 per dag.": [
+    "JEV estimates preferences; scores are not certain. High confidence at 50 can mean insufficient evidence. Limit: one analysis per 10 minutes and 12 per day.",
+    "JEV estime les préférences sans certitude. Une confiance élevée à 50 peut indiquer un manque de données. Limite : une analyse par 10 minutes et 12 par jour.",
+    "JEV schätzt Vorlieben; die Werte sind nicht sicher. Hohe Konfidenz bei 50 kann unzureichende Belege bedeuten. Maximal eine Analyse pro 10 Minuten und 12 pro Tag."
+  ],
+  "waarderingen": [
+    "ratings",
+    "évaluations",
+    "Bewertungen"
+  ],
+  "De afgelopen 14 dagen": [
+    "The last 14 days",
+    "Les 14 derniers jours",
+    "Die letzten 14 Tage"
+  ],
+  "Jouw activiteit · dagen in UTC": [
+    "Your activity · days in UTC",
+    "Votre activité · jours en UTC",
+    "Deine Aktivität · Tage in UTC"
+  ],
+  "Dagcijfers bekijken": [
+    "View daily numbers",
+    "Voir les chiffres quotidiens",
+    "Tageswerte anzeigen"
+  ],
+  "Datum": [
+    "Date",
+    "Date",
+    "Datum"
+  ],
+  "Wat springt eruit?": [
+    "Your strongest interests",
+    "Vos principaux intérêts",
+    "Deine stärksten Interessen"
+  ],
+  "Je hoogst gewaardeerde categorieën, vanaf drie keuzes per categorie:": [
+    "Your top categories with at least three ratings.",
+    "Vos meilleures catégories avec au moins trois évaluations.",
+    "Deine führenden Kategorien mit mindestens drei Bewertungen."
+  ],
+  "Beoordeel minstens drie posts in een categorie om hier je eerste patroon te zien.": [
+    "Rate at least three posts in a category to reveal your first pattern.",
+    "Évaluez au moins trois publications dans une catégorie pour découvrir une première tendance.",
+    "Bewerte mindestens drei Beiträge einer Kategorie, um ein erstes Muster zu sehen."
+  ],
+  "Hoe wordt de score berekend?": [
+    "How is the score calculated?",
+    "Comment le score est-il calculé ?",
+    "Wie wird der Wert berechnet?"
+  ],
+  "Dislike = 0, like = 1, superlike = 2. De categoriescore gebruikt deze schaal met een neutrale start. Dit zijn jouw keuzes; de JEV-schatting staat apart hieronder.": [
+    "Dislike = 0, like = 1, superlike = 2. The score starts at a neutral 50 and adjusts with your ratings. This reflects your choices; JEV’s estimates appear separately below.",
+    "Dislike = 0, like = 1, superlike = 2. Le score part de 50 et évolue avec vos évaluations. Il reflète vos choix ; les estimations JEV sont présentées séparément.",
+    "Dislike = 0, Like = 1, Superlike = 2. Der Wert beginnt bei neutralen 50 und passt sich deinen Bewertungen an. Er zeigt deine Entscheidungen; JEV-Schätzungen stehen separat darunter."
+  ],
+  "Voorkeur": [
+    "Preference",
+    "Préférence",
+    "Präferenz"
+  ],
+  "keuzes": [
+    "ratings",
+    "évaluations",
+    "Bewertungen"
+  ],
+  "Nog een klein aantal beoordelingen": [
+    "Based on a small sample",
+    "Basé sur un petit échantillon",
+    "Basiert auf wenigen Bewertungen"
+  ],
+  "Je tech-profiel": [
+    "Your tech profile",
+    "Votre profil tech",
+    "Dein Tech-Profil"
+  ],
+  "JEV-voorkeur per categorie · 0–100": [
+    "JEV preference by category · 0–100",
+    "Préférence JEV par catégorie · 0–100",
+    "JEV-Präferenz nach Kategorie · 0–100"
+  ],
+  "Radar van JEV-voorkeuren; exacte waarden staan in de tabel hieronder": [
+    "JEV preference radar; exact values are in the table below",
+    "Radar des préférences JEV ; valeurs exactes dans le tableau ci-dessous",
+    "Radar der JEV-Präferenzen; genaue Werte stehen in der Tabelle unten"
+  ],
+  "Categorie bekijken": [
+    "View category",
+    "Voir la catégorie",
+    "Kategorie anzeigen"
+  ],
+  "Nog geen swipes in deze categorie.": [
+    "No swipes in this category yet.",
+    "Aucun swipe dans cette catégorie.",
+    "Noch keine Swipes in dieser Kategorie."
+  ],
+  "JEV-confidence:": [
+    "JEV confidence:",
+    "Confiance JEV :",
+    "JEV-Konfidenz:"
+  ],
+  "%. Een score van 50 kan ook onvoldoende bewijs betekenen.": [
+    "%. A score of 50 can also mean insufficient evidence.",
+    "%. Un score de 50 peut aussi indiquer un manque de données.",
+    "%. Ein Wert von 50 kann auch unzureichende Belege bedeuten."
+  ],
+  "Wat je zoekt in een post": [
+    "What you look for in a post",
+    "Ce que vous recherchez dans une publication",
+    "Was du in einem Beitrag suchst"
+  ],
+  "Door JEV geschat uit dezelfde swipe-selectie.": [
+    "Estimated by JEV from the same set of ratings.",
+    "Estimé par JEV à partir des mêmes évaluations.",
+    "Von JEV anhand derselben Bewertungen geschätzt."
+  ],
+  "Technische diepgang": [
+    "Technical depth",
+    "Profondeur technique",
+    "Technische Tiefe"
+  ],
+  "Onderzoek": [
+    "Research",
+    "Recherche",
+    "Forschung"
+  ],
+  "Praktisch nut": [
+    "Practical value",
+    "Utilité pratique",
+    "Praktischer Nutzen"
+  ],
+  "Nieuwe technologie": [
+    "New technology",
+    "Nouvelles technologies",
+    "Neue Technologie"
+  ],
+  "Gedrag tegenover JEV": [
+    "Your behaviour vs JEV",
+    "Votre comportement face à JEV",
+    "Dein Verhalten im Vergleich zu JEV"
+  ],
+  "Gedrag: alle opgeslagen swipes. JEV: laatste": [
+    "Behaviour: all saved swipes. JEV: latest",
+    "Comportement : tous les swipes. JEV : les derniers",
+    "Verhalten: alle gespeicherten Swipes. JEV: letzte"
+  ],
+  ". Verschillen zijn geen meetfouten.": [
+    ". Differences are not measurement errors.",
+    ". Les différences ne sont pas des erreurs de mesure.",
+    ". Unterschiede sind keine Messfehler."
+  ],
+  "Voorkeuren en waarnemingen per categorie": [
+    "Preferences and observations by category",
+    "Préférences et observations par catégorie",
+    "Vorlieben und Beobachtungen nach Kategorie"
+  ],
+  "Kaarttijd": [
+    "Time on card",
+    "Temps sur la carte",
+    "Zeit auf der Karte"
+  ],
+  "Kaarttijd is de gemiddelde tijd tot een swipe, geen gemeten leestijd. Confidence is zekerheid van het model, geen hoeveelheid bewijs.": [
+    "Time on card is average time until a swipe, not measured reading time. Confidence describes model certainty, not evidence quantity.",
+    "Le temps sur la carte est le délai moyen avant un swipe, pas le temps de lecture. La confiance indique la certitude du modèle, pas la quantité de données.",
+    "Kartenzeit ist die durchschnittliche Zeit bis zum Swipe, keine gemessene Lesezeit. Konfidenz beschreibt Modellsicherheit, nicht die Datenmenge."
+  ],
+  "Voorkeuren door de tijd": [
+    "Preferences over time",
+    "Évolution des préférences",
+    "Vorlieben im Zeitverlauf"
+  ],
+  "opgeslagen analyses · maximaal de laatste 90 getoond": [
+    "saved analyses · showing up to the latest 90",
+    "analyses enregistrées · les 90 dernières au maximum",
+    "gespeicherte Analysen · höchstens die letzten 90 angezeigt"
+  ],
+  "Categorie voor analysegeschiedenis": [
+    "Category for analysis history",
+    "Catégorie de l’historique",
+    "Kategorie für den Analyseverlauf"
+  ],
+  "Na je tweede analyse verschijnt hier een trendlijn. Eerdere overschreven analyses kunnen niet worden teruggehaald.": [
+    "A trend line appears after your second analysis. Previously overwritten analyses cannot be recovered.",
+    "Une courbe apparaît après votre deuxième analyse. Les analyses écrasées ne peuvent pas être récupérées.",
+    "Nach deiner zweiten Analyse erscheint eine Trendlinie. Überschriebene Analysen können nicht wiederhergestellt werden."
+  ],
+  "Meetpunten bekijken": [
+    "View data points",
+    "Voir les points de mesure",
+    "Messpunkte anzeigen"
+  ],
+  "JEV-score": [
+    "JEV score",
+    "Score JEV",
+    "JEV-Wert"
+  ],
+  "Versie": [
+    "Version",
+    "Version",
+    "Version"
+  ],
+  "Hoeveel bewijs is er?": [
+    "How much evidence is there?",
+    "Quelle quantité de données ?",
+    "Wie viele Belege gibt es?"
+  ],
+  "swipes over": [
+    "swipes across",
+    "swipes sur",
+    "Swipes an"
+  ],
+  "actieve dagen. JEV krijgt deze historische samenvatting plus de laatste": [
+    "active days. JEV receives this historical summary plus the latest",
+    "jours actifs. JEV reçoit cet historique et les derniers",
+    "aktiven Tagen. JEV erhält diese Zusammenfassung und die letzten"
+  ],
+  "postfragmenten.": [
+    "post excerpts.",
+    "extraits de publications.",
+    "Beitragsauszüge."
+  ],
+  "Totaal": [
+    "Total",
+    "Total",
+    "Gesamt"
+  ],
+  "Laatste 30d": [
+    "Last 30d",
+    "Derniers 30j",
+    "Letzte 30T"
+  ],
+  "Vorige 30d": [
+    "Previous 30d",
+    "30j précédents",
+    "Vorherige 30T"
+  ],
+  "Verschil": [
+    "Change",
+    "Variation",
+    "Veränderung"
+  ],
+  "Te weinig data": [
+    "Not enough data",
+    "Données insuffisantes",
+    "Zu wenige Daten"
+  ],
+  "Percentages zijn waargenomen likes, geen JEV-scores. Verschillen verschijnen pas bij minimaal vijf swipes in beide periodes en zijn beschrijvend, niet statistisch bewezen. Meer gegevens maken patronen beter te beoordelen, maar garanderen geen betere voorspellingen.": [
+    "Percentages are observed likes, not JEV scores. Changes appear with at least five swipes in each period and are descriptive, not statistically proven. More data helps assess patterns but does not guarantee better predictions.",
+    "Les pourcentages sont des likes observés, pas des scores JEV. Les variations nécessitent cinq swipes par période et sont descriptives, sans preuve statistique. Plus de données facilite l’évaluation sans garantir de meilleures prédictions.",
+    "Prozentwerte sind beobachtete Likes, keine JEV-Werte. Veränderungen erfordern fünf Swipes je Zeitraum und sind beschreibend, nicht statistisch belegt. Mehr Daten helfen bei der Bewertung, garantieren aber keine besseren Vorhersagen."
+  ],
+  "Andere model- of analyseversies kunnen scores beïnvloeden. Dit is geen automatische training van JEV.": [
+    "Different model or analysis versions can affect scores. This is not automatic JEV training.",
+    "Les versions du modèle ou de l’analyse peuvent modifier les scores. Ceci n’est pas un entraînement automatique de JEV.",
+    "Andere Modell- oder Analyseversionen können Werte beeinflussen. Dies ist kein automatisches Training von JEV."
+  ],
+  "Jouw aanbevelingsmodel": [
+    "Your recommendation model",
+    "Votre modèle de recommandation",
+    "Dein Empfehlungsmodell"
+  ],
+  "JOUW AANBEVELINGSMODEL": [
+    "YOUR RECOMMENDATION MODEL",
+    "VOTRE MODÈLE DE RECOMMANDATION",
+    "DEIN EMPFEHLUNGSMODELL"
+  ],
+  "Modelstatus wordt opgehaald. Als dit niet lukt, blijft je feed beschikbaar.": [
+    "Loading model status. Your feed remains available if this fails.",
+    "Chargement du statut du modèle. Votre fil reste disponible en cas d’échec.",
+    "Modellstatus wird geladen. Dein Feed bleibt bei einem Fehler verfügbar."
+  ],
+  "Je keuzes zijn veranderd": [
+    "Your choices have changed",
+    "Vos choix ont changé",
+    "Deine Entscheidungen haben sich geändert"
+  ],
+  "Je feed leert van jou": [
+    "Your feed learns from you",
+    "Votre fil apprend de vous",
+    "Dein Feed lernt von dir"
+  ],
+  "We wachten op een beter model": [
+    "Waiting for a better model",
+    "En attente d’un meilleur modèle",
+    "Warten auf ein besseres Modell"
+  ],
+  "Klaar voor de volgende controle": [
+    "Ready for the next check",
+    "Prêt pour le prochain contrôle",
+    "Bereit für die nächste Prüfung"
+  ],
+  "Leer Techer jouw smaak": [
+    "Teach Techer your taste",
+    "Apprenez vos goûts à Techer",
+    "Zeig Techer deinen Geschmack"
+  ],
+  "Je eerdere model wordt opnieuw beoordeeld. Tot die tijd gebruiken we de basisrangschikking.": [
+    "Your previous model needs reassessment. Until then, we use the baseline ranking.",
+    "Votre ancien modèle doit être réévalué. En attendant, nous utilisons le classement de base.",
+    "Dein bisheriges Modell wird neu bewertet. Bis dahin verwenden wir die Basisrangfolge."
+  ],
+  "Je persoonlijke model bepaalt mee welke posts je als eerste ziet.": [
+    "Your personal model helps decide which posts you see first.",
+    "Votre modèle personnel aide à choisir les publications affichées en premier.",
+    "Dein persönliches Modell bestimmt mit, welche Beiträge du zuerst siehst."
+  ],
+  "De laatste kandidaat was niet duidelijk beter. Je huidige rangschikking blijft behouden.": [
+    "The latest candidate was not clearly better. Your current ranking is retained.",
+    "Le dernier candidat n’était pas clairement meilleur. Votre classement actuel est conservé.",
+    "Der letzte Kandidat war nicht deutlich besser. Deine aktuelle Rangfolge bleibt erhalten."
+  ],
+  "Er zijn genoeg keuzes voor een trainingspoging. De dagelijkse controle kijkt ook of een eerlijke test mogelijk is.": [
+    "There are enough ratings to attempt training. The daily check also assesses whether a fair test is possible.",
+    "Vous avez assez d’évaluations pour tenter un entraînement. Le contrôle quotidien vérifie aussi si un test équitable est possible.",
+    "Es gibt genug Bewertungen für einen Trainingsversuch. Die tägliche Prüfung kontrolliert auch, ob ein fairer Test möglich ist."
+  ],
+  "Elke beoordeling helpt je persoonlijke model. Een superlike telt als een sterkere voorkeur.": [
+    "Every rating helps your personal model. A superlike signals a stronger preference.",
+    "Chaque évaluation aide votre modèle. Un superlike indique une préférence plus forte.",
+    "Jede Bewertung hilft deinem Modell. Ein Superlike zeigt eine stärkere Vorliebe."
+  ],
+  "Nieuwe kandidaat": [
+    "New candidate",
+    "Nouveau candidat",
+    "Neuer Kandidat"
+  ],
+  "Basisvoorspelling": [
+    "Baseline prediction",
+    "Prédiction de base",
+    "Basisvorhersage"
+  ],
+  "Vorig model": [
+    "Previous model",
+    "Modèle précédent",
+    "Vorheriges Modell"
+  ],
+  "Persoonlijk actief": [
+    "Personal model active",
+    "Modèle personnel actif",
+    "Persönliches Modell aktiv"
+  ],
+  "Basisfeed actief": [
+    "Baseline feed active",
+    "Fil de base actif",
+    "Basisfeed aktiv"
+  ],
+  "nieuwe beoordelingen": [
+    "new ratings",
+    "nouvelles évaluations",
+    "neue Bewertungen"
+  ],
+  "unieke posts beoordeeld": [
+    "unique posts rated",
+    "publications uniques évaluées",
+    "einzelne Beiträge bewertet"
+  ],
+  "Voortgang naar trainingsdrempel": [
+    "Progress towards training threshold",
+    "Progression vers le seuil d’entraînement",
+    "Fortschritt zur Trainingsschwelle"
+  ],
+  "Trainingsdrempel bereikt.": [
+    "Training threshold reached.",
+    "Seuil d’entraînement atteint.",
+    "Trainingsschwelle erreicht."
+  ],
+  "Nog {count} posts tot de {stage} trainingsdrempel.": [
+    "{count} more posts until the {stage} training threshold.",
+    "Encore {count} publications avant le seuil d’entraînement {stage}.",
+    "Noch {count} Beiträge bis zur {stage} Trainingsschwelle."
+  ],
+  "eerste": [
+    "first",
+    "initial",
+    "ersten"
+  ],
+  "volgende": [
+    "next",
+    "suivant",
+    "nächsten"
+  ],
+  "Beoordeel op je eigen smaak. Je hoeft niets te liken om een drempel te halen.": [
+    "Rate honestly. You don’t need to like anything just to reach a threshold.",
+    "Évaluez selon vos goûts. Inutile de liker pour atteindre un seuil.",
+    "Bewerte ehrlich. Du musst nichts liken, nur um eine Schwelle zu erreichen."
+  ],
+  "Verzamelen": [
+    "Collect",
+    "Collecter",
+    "Sammeln"
+  ],
+  "Jouw keuzes": [
+    "Your choices",
+    "Vos choix",
+    "Deine Entscheidungen"
+  ],
+  "Testen": [
+    "Test",
+    "Tester",
+    "Testen"
+  ],
+  "Op aparte posts": [
+    "On held-out posts",
+    "Sur des posts réservés",
+    "Mit separaten Beiträgen"
+  ],
+  "Verbeteren": [
+    "Improve",
+    "Améliorer",
+    "Verbessern"
+  ],
+  "Alleen bij winst": [
+    "Only with a gain",
+    "Seulement si meilleur",
+    "Nur bei Verbesserung"
+  ],
+  "Laatste modeltest": [
+    "Latest model test",
+    "Dernier test du modèle",
+    "Letzter Modelltest"
+  ],
+  "testposts": [
+    "test posts",
+    "posts de test",
+    "Testbeiträge"
+  ],
+  "Kandidaat toegelaten": [
+    "Candidate accepted",
+    "Candidat accepté",
+    "Kandidat angenommen"
+  ],
+  "Geen nieuw model geactiveerd": [
+    "No new model activated",
+    "Aucun nouveau modèle activé",
+    "Kein neues Modell aktiviert"
+  ],
+  "Voorspelfout, lager is beter. ": [
+    "Prediction error, lower is better. ",
+    "Erreur de prédiction, plus bas est meilleur. ",
+    "Vorhersagefehler, niedriger ist besser. "
+  ],
+  "Lagere voorspelfout is beter. Activatie vereist minstens 2% winst tegenover de basis én een eventueel vorig model. Dit garandeert nog geen betere hele feed.": [
+    "Lower prediction error is better. Activation requires at least a 2% gain over the baseline and any previous model. This does not guarantee a better overall feed.",
+    "Une erreur plus faible est préférable. L’activation exige au moins 2 % de gain face à la base et à l’ancien modèle. Cela ne garantit pas un meilleur fil global.",
+    "Ein niedrigerer Vorhersagefehler ist besser. Aktivierung erfordert mindestens 2 % Verbesserung gegenüber der Basis und einem Vorgängermodell. Das garantiert keinen insgesamt besseren Feed."
+  ],
+  "De eerste test volgt nog": [
+    "Your first test is still ahead",
+    "Le premier test reste à venir",
+    "Der erste Test steht noch aus"
+  ],
+  "Hier vergelijk je straks het nieuwe model met de basis. Er zijn nog geen testresultaten.": [
+    "You’ll compare the new model with the baseline here. No test results yet.",
+    "Vous comparerez ici le nouveau modèle à la base. Aucun résultat pour le moment.",
+    "Hier vergleichst du später das neue Modell mit der Basis. Noch keine Testergebnisse."
+  ],
+  "Dagelijkse controle": [
+    "Daily check",
+    "Contrôle quotidien",
+    "Tägliche Prüfung"
+  ],
+  "Nog niet gecontroleerd": [
+    "Not checked yet",
+    "Pas encore vérifié",
+    "Noch nicht geprüft"
+  ],
+  "Laatst: {date}": [
+    "Last: {date}",
+    "Dernier : {date}",
+    "Zuletzt: {date}"
+  ],
+  "Hoe het leert & trainingsgeschiedenis": [
+    "How it learns & training history",
+    "Apprentissage et historique",
+    "Lernweise und Trainingsverlauf"
+  ],
+  "Het model leert van categorieën, tags en tekst. Nieuwere keuzes wegen zwaarder. Na 20 nieuwe beoordelingen kan het opnieuw trainen. Een bruikbare verdeling van likes en dislikes in de test blijft nodig. Ongelezen posts en bookmarks tellen niet als dislikes.": [
+    "The model learns from categories, tags and text. Recent choices carry more weight. Retraining can start after 20 new ratings, with enough likes and dislikes for a useful test. Unread and bookmarked posts do not count as dislikes.",
+    "Le modèle apprend des catégories, tags et textes. Les choix récents pèsent davantage. Il peut se réentraîner après 20 nouvelles évaluations, avec assez de likes et dislikes pour le test. Les posts non lus et enregistrés ne sont pas des dislikes.",
+    "Das Modell lernt aus Kategorien, Tags und Text. Neuere Entscheidungen wiegen stärker. Nach 20 neuen Bewertungen ist erneutes Training möglich, mit genügend Likes und Dislikes für einen Test. Ungelesene und gespeicherte Beiträge zählen nicht als Dislikes."
+  ],
+  "JEV maakt apart de inhoudelijke analyse. Dit model traint JEV zelf niet. Een persoonlijk model verkent ongeveer één op zeven posities andere posts.": [
+    "JEV provides the separate content analysis. This model does not train JEV itself. A personal model explores other posts in roughly one in seven positions.",
+    "JEV fournit l’analyse de contenu séparément. Ce modèle n’entraîne pas JEV. Un modèle personnel explore d’autres posts environ une fois sur sept.",
+    "JEV erstellt separat die Inhaltsanalyse. Dieses Modell trainiert JEV selbst nicht. Ein persönliches Modell erkundet etwa an jeder siebten Position andere Beiträge."
+  ],
+  "Actief model getraind op": [
+    "Active model trained on",
+    "Modèle actif entraîné sur",
+    "Aktives Modell trainiert mit"
+  ],
+  "posts ·": [
+    "posts ·",
+    "publications ·",
+    "Beiträgen ·"
+  ],
+  "Laatste controle:": [
+    "Last check:",
+    "Dernier contrôle :",
+    "Letzte Prüfung:"
+  ],
+  "Test vóór de definitieve training:": [
+    "Test before final training:",
+    "Test avant l’entraînement final :",
+    "Test vor dem endgültigen Training:"
+  ],
+  "trainingsposts en": [
+    "training posts and",
+    "posts d’entraînement et",
+    "Trainingsbeiträge und"
+  ],
+  "apart gehouden testposts. De grafiek toont log loss op gewogen ratings. Na toelating traint het model opnieuw op alle beschikbare voorbeelden.": [
+    "held-out test posts. The chart shows log loss on weighted ratings. After acceptance, the model retrains on all available examples.",
+    "posts de test réservés. Le graphique montre la log loss sur les évaluations pondérées. Après acceptation, le modèle est réentraîné sur tous les exemples disponibles.",
+    "separate Testbeiträge. Das Diagramm zeigt den Log Loss gewichteter Bewertungen. Nach Annahme trainiert das Modell mit allen verfügbaren Beispielen erneut."
+  ],
+  "Laatste": [
+    "Latest",
+    "Derniers",
+    "Letzte"
+  ],
+  "controles": [
+    "checks",
+    "contrôles",
+    "Prüfungen"
+  ],
+  "Uitkomst": [
+    "Outcome",
+    "Résultat",
+    "Ergebnis"
+  ],
+  "Voorspelfout": [
+    "Prediction error",
+    "Erreur de prédiction",
+    "Vorhersagefehler"
+  ],
+  "Geactiveerd": [
+    "Activated",
+    "Activé",
+    "Aktiviert"
+  ],
+  "Niet beter": [
+    "Not better",
+    "Pas meilleur",
+    "Nicht besser"
+  ],
+  "Meer keuzes nodig": [
+    "More ratings needed",
+    "Plus d’évaluations nécessaires",
+    "Mehr Bewertungen nötig"
+  ],
+  "Nog geen trainingsgeschiedenis.": [
+    "No training history yet.",
+    "Pas encore d’historique.",
+    "Noch kein Trainingsverlauf."
+  ],
+  "Profiel van ": [
+    "Profile of ",
+    "Profil de ",
+    "Profil von "
+  ],
+  "Open op X": [
+    "Open on X",
+    "Ouvrir sur X",
+    "Auf X öffnen"
+  ],
+  "Meer weergeven op X": [
+    "Show more on X",
+    "Voir plus sur X",
+    "Mehr auf X anzeigen"
+  ],
+  "Originele post": [
+    "Original post",
+    "Publication originale",
+    "Originalbeitrag"
+  ],
+  "Foto’s, video’s en geciteerde posts": [
+    "Photos, videos and quoted posts",
+    "Photos, vidéos et publications citées",
+    "Fotos, Videos und zitierte Beiträge"
+  ],
+  "X levert voor deze lange post een verkorte weergave.": [
+    "X provides a shortened version of this long post.",
+    "X fournit une version abrégée de cette publication.",
+    "X stellt eine gekürzte Version dieses langen Beitrags bereit."
+  ],
+  "Originele post laden…": [
+    "Loading original post…",
+    "Chargement de l’original…",
+    "Originalbeitrag wird geladen…"
+  ],
+  "X-post niet beschikbaar. Fragment via Aligned News.": [
+    "X post unavailable. Excerpt via Aligned News.",
+    "Publication X indisponible. Extrait via Aligned News.",
+    "X-Beitrag nicht verfügbar. Auszug von Aligned News."
+  ],
+  "Fragment via Aligned News.": [
+    "Excerpt via Aligned News.",
+    "Extrait via Aligned News.",
+    "Auszug von Aligned News."
+  ],
+  "Bekijk op X": [
+    "View on X",
+    "Voir sur X",
+    "Auf X ansehen"
+  ],
+  "In feed ·": [
+    "In feed ·",
+    "Dans le fil ·",
+    "Im Feed ·"
+  ],
+  "Originele X-post laden…": [
+    "Loading original X post…",
+    "Chargement de la publication X…",
+    "Original-X-Beitrag wird geladen…"
+  ],
+  "X kan dit bericht hier niet laden.": [
+    "X cannot load this post here.",
+    "X ne peut pas charger cette publication ici.",
+    "X kann diesen Beitrag hier nicht laden."
+  ],
+  "Lees de post op X ↗": [
+    "Read the post on X ↗",
+    "Lire la publication sur X ↗",
+    "Beitrag auf X lesen ↗"
+  ],
+  "Jouw volgende tech-ontdekking.": [
+    "Your next tech discovery.",
+    "Votre prochaine découverte tech.",
+    "Deine nächste Tech-Entdeckung."
+  ],
+  "Log in om je swipes, leeslijst en voorkeuren bij elkaar te houden.": [
+    "Sign in to keep your swipes, reading list and preferences together.",
+    "Connectez-vous pour retrouver vos swipes, votre liste et vos préférences.",
+    "Melde dich an, um Swipes, Leseliste und Vorlieben zu speichern."
+  ],
+  "Doorgaan met Google": [
+    "Continue with Google",
+    "Continuer avec Google",
+    "Mit Google fortfahren"
+  ],
+  "Google-login wordt ingesteld.": [
+    "Google sign-in is being configured.",
+    "La connexion Google est en cours de configuration.",
+    "Die Google-Anmeldung wird eingerichtet."
+  ],
+  "Je bestaande gegevens blijven bewaard.": [
+    "Your existing data is preserved.",
+    "Vos données existantes sont conservées.",
+    "Deine bisherigen Daten bleiben erhalten."
+  ],
+  "Close": [
+    "Close",
+    "Fermer",
+    "Schließen"
+  ],
+  "{count}% geliket": [
+    "{count}% liked",
+    "{count}% aimés",
+    "{count}% gelikt"
+  ],
+  "Voorkeur {score}/100": [
+    "Preference {score}/100",
+    "Préférence {score}/100",
+    "Präferenz {score}/100"
+  ],
+  "{count} swipes in historisch profiel · ": [
+    "{count} swipes in historical profile · ",
+    "{count} swipes dans l’historique · ",
+    "{count} Swipes im bisherigen Profil · "
+  ],
+  "{count} recente postfragmenten · {date}": [
+    "{count} recent post excerpts · {date}",
+    "{count} extraits récents · {date}",
+    "{count} aktuelle Beitragsauszüge · {date}"
+  ],
+  "{likes} likes, {superlikes} superlikes en {dislikes} dislikes in je volledige geschiedenis.": [
+    "{likes} likes, {superlikes} superlikes and {dislikes} dislikes across your full history.",
+    "{likes} likes, {superlikes} superlikes et {dislikes} dislikes dans tout votre historique.",
+    "{likes} Likes, {superlikes} Superlikes und {dislikes} Dislikes in deinem gesamten Verlauf."
+  ],
+  "JEV-score voor {category} over tijd": [
+    "JEV score for {category} over time",
+    "Score JEV de {category} au fil du temps",
+    "JEV-Wert für {category} im Zeitverlauf"
+  ],
+  "{category} raakt aan {related} in je interesses.": [
+    "{category} connects to {related} in your interests.",
+    "{category} rejoint {related} dans vos intérêts.",
+    "{category} verbindet sich mit {related} in deinen Interessen."
+  ],
+  " en ": [
+    " and ",
+    " et ",
+    " und "
+  ],
+  "Opgehaald:": [
+    "Fetched:",
+    "Récupéré :",
+    "Abgerufen:"
+  ],
+  "Deze feed gebruikt de openbare RSS-feed van Aligned News. Aligned News selecteert nieuws uit 63 X-lijsten van Robert Scoble en aanvullende bronnen.": [
+    "This feed uses Aligned News’ public feeds and story archive, based on Robert Scoble’s lists and additional sources.",
+    "Ce fil utilise les flux publics et les archives d’Aligned News, basés sur les listes de Robert Scoble et d’autres sources.",
+    "Dieser Feed verwendet die öffentlichen Feeds und das Nachrichtenarchiv von Aligned News, basierend auf Robert Scobles Listen und weiteren Quellen."
+  ],
+  "Bij X-berichten haalt Techer ook de originele openbare posttekst op. Tik op de kaart voor de ingebedde post met media. X kan lange berichten zelf inkorten. Andere websites openen via ‘Origineel’.": [
+    "X posts are embedded with their media. X may shorten long posts. Other sources provide excerpts.",
+    "Les publications X sont intégrées avec leurs médias. X peut raccourcir les textes longs. Les autres sources fournissent des extraits.",
+    "X-Beiträge werden mit Medien eingebettet. X kann lange Beiträge kürzen. Andere Quellen liefern Auszüge."
+  ],
+  "Dit is de gepubliceerde selectie van Aligned News, geen rechtstreekse koppeling met alle posts uit de afzonderlijke X-lijsten.": [
+    "This is Aligned News’ published selection, not direct access to every post in each X list.",
+    "Il s’agit de la sélection publiée par Aligned News, pas d’un accès direct à chaque publication des listes X.",
+    "Dies ist die veröffentlichte Auswahl von Aligned News, kein direkter Zugriff auf jeden Beitrag der X-Listen."
+  ]
+}

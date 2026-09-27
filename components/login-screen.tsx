@@ -1,0 +1,3 @@
+'use client';
+import {LanguageSelect,useLanguage} from '@/lib/i18n';
+export function LoginScreen({enabled}:{enabled:boolean}){const {t}=useLanguage();return <main className="login-page"><div className="wordmark">techer<span>/</span><small>TECH TINDER</small></div><h1>{t('Jouw volgende tech-ontdekking.')}</h1><p>{t('Log in om je swipes, leeslijst en voorkeuren bij elkaar te houden.')}</p>{enabled?<a className="primary" href="/auth/login">{t('Doorgaan met Google')}</a>:<div className="login-pending">{t('Google-login wordt ingesteld.')}<br/><small>{t('Je bestaande gegevens blijven bewaard.')}</small></div>}<LanguageSelect/></main>}
