@@ -1,5 +1,5 @@
 import {categories, type Post, type Profile} from './radar';
-export const FEATURE_VERSION=1;
+export const FEATURE_VERSION=2;
 export const MIN_LABELS=100;
 export const NEW_LABELS=20;
 const SIZE=72;
@@ -18,15 +18,15 @@ export function features(post:Post){
 export function examples(profile:Profile,now=Date.now()):Sample[]{
  const posts=new Map<string,Sample>();
  const ordered=[...profile.interactions].sort((a,b)=>a.createdAt.localeCompare(b.createdAt)||a.id.localeCompare(b.id));
- for(const e of ordered){if(!e.post||!['LEFT','RIGHT'].includes(e.action)||!Number.isFinite(Date.parse(e.createdAt))||Date.parse(e.createdAt)>now)continue;
- const x=features(e.post);posts.set(e.postId,{id:e.id,postId:e.postId,at:e.createdAt,y:e.action==='RIGHT'?1:0,x,signature:JSON.stringify([e.id,e.action,e.createdAt,x])});}
+ for(const e of ordered){if(!e.post||!['LEFT','RIGHT','SUPER'].includes(e.action)||!Number.isFinite(Date.parse(e.createdAt))||Date.parse(e.createdAt)>now)continue;
+ const x=features(e.post);posts.set(e.postId,{id:e.id,postId:e.postId,at:e.createdAt,y:e.action==='SUPER'?1:e.action==='RIGHT'?.65:0,x,signature:JSON.stringify([e.id,e.action,e.createdAt,x])});}
  return [...posts.values()].sort((a,b)=>a.at.localeCompare(b.at)||a.id.localeCompare(b.id));
 }
 export function modelValid(model:RankModel|null,rows:Sample[]){if(!model||model.version!==FEATURE_VERSION||model.weights.length!==SIZE||model.weights.some(w=>!Number.isFinite(w)))return false;const current=new Map(rows.map(r=>[r.postId,r.signature]));return Object.entries(model.examples).every(([id,s])=>current.get(id)===s)}
 function probability(weights:number[],x:number[]){const z=weights.reduce((s,w,i)=>s+w*x[i],0);return 1/(1+Math.exp(-Math.max(-25,Math.min(25,z))))}
 export function predict(model:RankModel,post:Post){return probability(model.weights,features(post))}
 export function fit(rows:Sample[],now:number){
- const w=Array(SIZE).fill(0) as number[];w[0]=Math.log((rows.filter(r=>r.y).length+2)/(rows.filter(r=>!r.y).length+2));
+ const w=Array(SIZE).fill(0) as number[];w[0]=Math.log((rows.reduce((n,r)=>n+r.y,0)+2)/(rows.reduce((n,r)=>n+1-r.y,0)+2));
  const recency=rows.map(r=>Math.max(.15,Math.exp(-(now-Date.parse(r.at))/(90*86400000))));const sum=recency.reduce((a,b)=>a+b,0);
  for(let epoch=0;epoch<160;epoch++){const grad=Array(SIZE).fill(0);for(let j=0;j<rows.length;j++){const r=rows[j],error=(probability(w,r.x)-r.y)*recency[j];for(let i=0;i<SIZE;i++)grad[i]+=error*r.x[i]}for(let i=0;i<SIZE;i++)w[i]-=.7*(grad[i]/sum+(i===0?0:.01*w[i]))}
  return w;
@@ -43,7 +43,7 @@ export function train(profile:Profile,previous:RankModel|null,prior:TrainingStat
  const testSize=Math.min(100,Math.max(20,Math.floor(rows.length*.2)),active?fresh.length:rows.length-60);
  const test=rows.slice(-testSize),cutoff=test[0].at,training=rows.filter(r=>r.at<cutoff);
  if(training.length<60||test.filter(r=>r.y).length<3||test.filter(r=>!r.y).length<3){state.reason='Meer likes én dislikes verspreid over tijd nodig voor een eerlijke test.';return {active,state,candidate:null}}
- const weights=fit(training,now),base=(training.filter(r=>r.y).length+2)/(training.length+4);
+ const weights=fit(training,now),base=(training.reduce((n,r)=>n+r.y,0)+2)/(training.length+4);
  const average=(fn:(r:Sample)=>number)=>test.reduce((s,r)=>s+fn(r),0)/test.length;
  const metrics:Metrics={candidate:average(r=>loss(probability(weights,r.x),r.y)),baseline:average(r=>loss(base,r.y)),incumbent:active?average(r=>loss(probability(active.weights,r.x),r.y)):null,accuracy:average(r=>Number((probability(weights,r.x)>=.5)===Boolean(r.y))),testCount:test.length,trainCount:training.length,testStart:test[0].at,testEnd:test.at(-1)!.at};
  const promoted=metrics.candidate<metrics.baseline*.98&&(metrics.incumbent===null||metrics.candidate<metrics.incumbent*.98);

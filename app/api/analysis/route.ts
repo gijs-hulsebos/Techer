@@ -9,7 +9,7 @@ export async function POST(request:Request){
  let user='';let reserved=false;
  try{
   user=await siteUser(request);if(!configured())return Response.json({error:'JEV is niet aangesloten.'},{status:503,headers});
-  const profile=await readProfile(user);if(!profile||profile.state.interactions.filter(e=>e.action==='LEFT'||e.action==='RIGHT').length<1)return Response.json({error:'Geef eerst minimaal 1 post een like of dislike.'},{status:422,headers});
+  const profile=await readProfile(user);if(!profile||profile.state.interactions.filter(e=>e.action==='LEFT'||e.action==='RIGHT'||e.action==='SUPER').length<1)return Response.json({error:'Geef eerst minimaal 1 post een like of dislike.'},{status:422,headers});
   reserved=await supabaseRequest<boolean>('rpc/techer_reserve_analysis',{method:'POST',body:JSON.stringify({p_user_id:user,p_revision:profile.revision})});
   if(!reserved)return Response.json({error:'Je kunt elke 10 minuten analyseren, maximaal 12 keer per dag.'},{status:429,headers});
   const result=await analyzeWithJev(profile.state,process.env.OPENROUTER_API_KEY!);
