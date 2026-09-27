@@ -1,0 +1,4 @@
+import ts from 'typescript';import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';
+const output=path.resolve('.sites-runtime/feed-tests');fs.mkdirSync(output,{recursive:true});
+for(const name of ['radar','x-post','post-topics','aligned-stories','discovery','aligned','personal-model']){const code=ts.transpileModule(fs.readFileSync(`lib/${name}.ts`,'utf8'),{compilerOptions:{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022}}).outputText.replace(/from '(\.\/[^']+)'/g,"from '$1.mjs'");fs.writeFileSync(path.join(output,name+'.mjs'),code)}
+for(const name of ['verify-core','verify-feed','verify-personal-model']){const code=fs.readFileSync(name+'.mjs','utf8').replace(/from '\.\/lib\/([^']+)\.ts'/g,"from './$1.mjs'");const file=path.join(output,name+'.mjs');fs.writeFileSync(file,code);await import(pathToFileURL(file).href)}

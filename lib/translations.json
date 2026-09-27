@@ -1018,5 +1018,15 @@
     "This is Aligned News’ published selection, not direct access to every post in each X list.",
     "Il s’agit de la sélection publiée par Aligned News, pas d’un accès direct à chaque publication des listes X.",
     "Dies ist die veröffentlichte Auswahl von Aligned News, kein direkter Zugriff auf jeden Beitrag der X-Listen."
+  ],
+  "Buiten je favorieten: gebaseerd op je beoordelingen en beschikbare JEV-analyse.": [
+    "Beyond your favourites, guided by your ratings and available JEV analysis.",
+    "Au-delà de vos favoris, selon vos évaluations et l’analyse JEV disponible.",
+    "Außerhalb deiner Favoriten, basierend auf Bewertungen und verfügbarer JEV-Analyse."
+  ],
+  "Je bent bij met {category}. Ontdek ondertussen andere onderwerpen.": [
+    "You’re caught up on {category}. Explore other topics while new posts arrive.",
+    "Vous êtes à jour sur {category}. Découvrez d’autres sujets en attendant.",
+    "Bei {category} bist du auf dem neuesten Stand. Entdecke inzwischen andere Themen."
   ]
 }

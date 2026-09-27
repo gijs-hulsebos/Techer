@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {parseStories} from './lib/aligned-stories.ts';
+import {rank,initialProfile} from './lib/radar.ts';
+import {blindSpotOrder,discoveryPreferences} from './lib/discovery.ts';
+const story={headline:'Spatial computing SDK for smart glasses',summary:'Build visionOS apps',section:'breaking',source_url:'https://x.com/test/status/300',published_at:'2026-09-27T10:00:00Z',sources:[{type:'reference',url:'https://x.com/test/status/301'}]};
+const posts=parseStories([story]);assert.equal(posts.length,2);assert.equal(rank(posts,initialProfile,'XR').length,2);assert.equal(rank(posts,initialProfile,'DEV').length,2);
+assert.deepEqual(parseStories(null),[]);assert.deepEqual(parseStories({sections:{breaking:[null,'bad']}}),[]);
+assert.equal(parseStories([{...story,source_url:'javascript:alert(1)',sources:[]}]).length,0);
+const ai={...posts[0],id:'a',category:'AI',related:[],url:'https://x.com/test/status/100'},xr={...ai,id:'b',category:'XR',url:'https://x.com/test/status/101'};
+const profile={...initialProfile,interactions:Array.from({length:10},(_,i)=>({id:String(i),postId:'rated'+i,category:'AI',action:'SUPER',createdAt:new Date().toISOString(),dwellTime:1}))};
+assert.equal(blindSpotOrder([ai,xr],profile)[0].id,'b');assert.equal(blindSpotOrder([ai],profile).length,1);assert.equal(blindSpotOrder([ai,xr],initialProfile).length,2);
+const rated={...profile,interactions:[...profile.interactions,{postId:'b',category:'XR',action:'LEFT',post:xr}]};assert(!blindSpotOrder([ai,xr],rated).some(p=>p.id==='b'));
+const alias={...xr,id:'alias',url:'https://twitter.com/other/status/101?s=20'};assert.equal(rank([xr,alias],initialProfile,'ALL').length,1);assert.equal(blindSpotOrder([xr,alias],initialProfile).length,1);assert.equal(rank([alias],rated,'ALL').length,0);
+assert(discoveryPreferences(profile,[{category:'AI',score:100,confidence:1}]).AI.preference>discoveryPreferences(profile,[{category:'AI',score:0,confidence:1}]).AI.preference);
+assert.equal(blindSpotOrder([{...ai,url:'https://example.com'}],profile).length,0);
+console.log('PASS: XR/Dev cross-topic coverage, source links, invalid sources, cold-start discovery, ratings and JEV guidance, canonical X dedup, seen exclusion.');
