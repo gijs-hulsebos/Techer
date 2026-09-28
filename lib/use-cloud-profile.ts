@@ -26,7 +26,7 @@ export function useCloudProfile(){
      setStatus('saving');let saved=false;
      for(let attempt=0;attempt<3;attempt++){
       const next=mergeProfile(item.base,item.local,remote.state??initialProfile);profileSchema.parse(next);
-      try{const result=await saveCloudProfile(next,remote.revision??0);remote={...remote,state:next,revision:result.revision};localStorage.removeItem(prefix()+item.id);saved=true;break}
+      try{const result=await saveCloudProfile(next,remote.revision??0,user.current);remote={...remote,state:next,revision:result.revision};localStorage.removeItem(prefix()+item.id);saved=true;break}
       catch(error){if(!(error instanceof Error)||error.message!=='REVISION_CONFLICT')throw error;remote=await loadCloudProfile();if(remote.userId!==user.current)throw Error('ACCOUNT_CHANGED')}
      }
      if(!saved)throw Error('BUSY');
@@ -35,7 +35,7 @@ export function useCloudProfile(){
     setStatus(remaining.length?'saving':'saved');
    };
    if(navigator.locks)await navigator.locks.request('techer-sync:'+user.current,work);else await work();
-  }catch{if(alive.current)setStatus('offline')}finally{active.current=false}
+  }catch(error){if(alive.current){if(error instanceof Error&&['ACCOUNT_CHANGED','AUTH_REQUIRED'].includes(error.message)){mode.current='loading';display(initialProfile);setReady(false);window.location.replace('/')}else setStatus('offline')}}finally{active.current=false}
  };
  const initialize=useRef<()=>Promise<void>>(async()=>{});
  initialize.current=async()=>{
@@ -46,13 +46,7 @@ export function useCloudProfile(){
    let legacy:Profile|undefined;try{const raw=localStorage.getItem(LEGACY);if(raw)legacy=profileSchema.parse(JSON.parse(raw))}catch{}
    if(!remote.enabled){mode.current='local';display(legacy??initialProfile);setStatus('local');setReady(true);return}
    if(!remote.userId)throw Error('AUTH_REQUIRED');user.current=remote.userId;
-   const marker='techer-imported:'+encodeURIComponent(user.current);
-   const legacyOwner=localStorage.getItem('techer-legacy-owner');
-   if(!localStorage.getItem(marker)){
-    // Import once. Events retain their UUIDs, so retries cannot duplicate swipes.
-    if(legacy&&(!legacyOwner||legacyOwner===user.current)){queue(initialProfile,legacy);localStorage.setItem('techer-legacy-owner',user.current)}
-    localStorage.setItem(marker,'1');
-   }
+   // Signed-in accounts never inherit unowned browser data.
    const merged=pending().reduce((p,item)=>mergeProfile(item.base,item.local,p),remote.state??initialProfile);
    display(merged);mode.current='cloud';setReady(true);await flush.current();
   }catch{if(alive.current)setStatus('error')}
@@ -66,3 +60,4 @@ export function useCloudProfile(){
  },[]);
  return {profile,setProfile,ready,status,retry:()=>void initialize.current()};
 }
+
